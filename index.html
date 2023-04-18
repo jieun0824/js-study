@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="main.css">
+</head>
+<body>
+    <div class="alert-box" id="alert">
+        <p class="title1" id="title">내용</p>
+        <button id="close">X</button>
+    </div>
+    <button onclick="closeOrOpen('block', '아이디 입력하세요')">버튼1</button>
+    <button onclick="closeOrOpen('block', '비밀번호 입력하세요')">버튼2</button>
+
+    <script>
+
+        document.getElementById('close').addEventListener('click', function(){
+            document.getElementById('alert').style.display = 'none'; // 닫아주는 코드
+
+        }); // 이 요소 클릭시 함수 내 코드 실행. 
+        function closeOrOpen(sit, txt){
+            document.getElementsByClassName("alert-box")[0].style.display = sit; //주의: class 이름은 코드 내에서 여러개가 존재할 수도 있다. (id는 중복 허용안함.) => 하나만 하고싶으면 인덱스!! [숫자] -> 찾은 것 중에서 몇번째.
+            document.getElementsByClassName("title1")[0].innerText = txt;
+        }
+        
+
+
+    </script>
+</body>
+</html>
