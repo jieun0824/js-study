@@ -9,7 +9,31 @@
 <body>
 
     <script>
-        
+        //Q1 삼육구 게임
+        function threeSixNine(input1){
+            if(input1%3 == 0){
+                console.log('박수');
+            }else{
+                console.log('통과');
+            }
+        }
+
+        //Q2
+        function threeSixNine2(input2){
+            if(input2%3 == 0 && input2%9 == 0){ //오답) 결과는 맞지만, 굳이 앞에 input2%3 이라는 조건이 들어갈 필요가 없다
+                console.log('박수 박수');
+            }else if(input2%3 == 0){
+                console.log('박수');
+            }else{
+                console.log('통과')
+            }
+        }
+
+        //Q3
+        function passOrFail(){
+            
+        }
+
     </script>
 </body>
 </html>
