@@ -50,3 +50,8 @@ show-modal 은 애니메이션 적용 후의 스타일 */
     visibility: visible;
     opacity: 1;
 }
+
+.main-bg {
+    padding: 100px 20px;
+    background: lightgrey;
+}

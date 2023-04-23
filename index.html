@@ -18,7 +18,16 @@
     <div class="black-bg">
         <div class="white-bg">
           <h4>로그인하세요</h4>
-          <button class="btn btn-danger" id="close">닫기</button>
+          <form action="success.html">
+            <div class="my-3">
+              <input type="text" class="form-control" id="first-value">
+             </div>
+             <div class="my-3">
+               <input type="password" class="form-control" id="second-value">
+             </div>
+             <button type="submit" class="btn btn-primary" id="submit">전송</button>
+             <button type="button" class="btn btn-danger" id="close">닫기</button>
+          </form> 
         </div>
     </div> 
 
@@ -39,9 +48,10 @@
         <li class="list-group-item">And a fifth one</li>
       </ul> 
 
-
-    <button class="popUp">로그인</button>
-
+      <div class="main-bg">
+        <h4>Shirts in Sale</h4>
+        <button id="login" class="btn btn-danger">로그인</button>
+      </div>
 
     
     <script>
@@ -61,13 +71,45 @@
         // })
 
         //jquery
-        $('.popUp').on('click', function(){
+        $('#login').on('click', function(){
             $('.black-bg').addClass('show-modal');
         })
 
         $('#close').on('click', function(){
             $('.black-bg').removeClass('show-modal');
         })
+
+
+        //전송버튼 누를 때 첫째 <input>에 입력된게 업승면 alert 띄우기
+
+        // document.querySelector('#submit').addEventListener('click', function(){
+        //   if (document.querySelector('#first-value').value == ''){
+        //     alert('로그인 아이디를 입력해주세요.');
+        //   }
+        // })
+
+        
+
+        // $('form').on('submit', function(){
+        //   if($('#first-value').val() == ''){
+        //     alert('로그인 아이디를 입력해주세요.');
+        //     e.preventDefault();} //폼 전송 막기
+        //   if($('#second-value').val() == ''){
+        //     alert('비밀번호를 입력해주세요.');
+        //     e.preventDefault(); //폼 전송 막기
+        //   }
+        //   if($('#second-value').val.length < 6){
+        //     alert('비밀번호를 6자 이상 입력해주세요.');
+        //     e.preventDefault();
+        //   }
+        //   });
+
+        // document.getElementById('email').addEventListener('input', function(){
+        //   co
+        // })
+        
+
+
 
     </script>
 </body>
