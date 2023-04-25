@@ -30,9 +30,34 @@
         }
 
         //Q3
-        function passOrFail(){
-            
+        function passOrFail(score1, score2){
+            let total = score1+score2;
+
+
+
+            if(score1<0 || score1>100 || score2<0 || score2>100){
+                alert('장난치지 마세요');
+            }
+            else if(score1 <40 || score2<40){
+                console.log('과락')
+            }else if(total>=120){
+                console.log('합격')
+            }else{
+                console.log('불합격')
+            }
         }
+
+        //응용
+
+        function real369(input){
+            if(input%10 == 3 || input%10 == 6 || input%10 == 9){
+                console.log('박수');
+            }else{
+                console.log('통과');
+            }
+        }
+
+
 
     </script>
 </body>
