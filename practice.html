@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,6 +7,11 @@
     <title>Document</title>
 </head>
 <body>
+
+    <!--Q5 간단한 퀴즈 UI-->
+    <p>태조 이성계가 태어난 년도는?</p>
+    <input type="text" id="answer">
+    <button id="send-answer">제출</button>
 
     <script>
         //Q1 삼육구 게임
@@ -56,6 +61,61 @@
                 console.log('통과');
             }
         }
+
+        //<변수, 사칙연산 실력향상 과제>
+        //Q1 변수를 만들어봅시다 
+        let age = 24;
+        const birthplace = 'seoul';
+
+
+        //Q3 이자율 계산하기
+
+        var 예금액 = 10000;
+        var 미래예금액 = 0;
+
+        var 이자율;
+        if (예금액 > 50000){
+                이자율 = 0.2;
+            }else{
+                이자율 = 0.15;
+            }
+        미래예금액 = 예금액 + 예금액*이자율 + (예금액+예금액*이자율)*이자율; 
+ 
+        console.log(미래예금액);
+
+        //Q4 커피 리필
+
+        let first = 360;
+        let total = 0;
+        
+        total = first + first*2/3 + first*2/3*2/3;
+        console.log(total);
+
+        //Q5
+        let count = 0;
+
+        document.querySelector('#send-answer').addEventListener('click', function(){
+            count++;
+            let answer = '1335';
+            if (document.querySelector('#answer').value == answer){
+                alert('성공');
+            }else if (count>=3){
+                alert('멍청아');
+            }else{
+                alert('오답');
+            }
+            
+        })
+
+        //응용1
+
+        console.log(1.2**10);
+
+
+
+
+
+
 
 
 

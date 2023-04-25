@@ -56,6 +56,12 @@
         <button id="login" class="btn btn-danger">로그인</button>
       </div>
 
+      <!--setTimeout-->
+
+      <div class="alert alert-danger" id="present">
+        5초 이내 구매시 사은품 증정!
+      </div>
+
 
 
     
@@ -121,6 +127,19 @@
 
             }
           });
+
+          //setTimeout
+
+          let timeout = 5;
+
+          setInterval(function(){
+            timeout--;
+            if(timeout>0){
+            $('#present').html(timeout+'초 이내 구매시 사은품 증정!');
+            } else{
+              $('#present').hide();
+            }
+          }, 1000)
 
 
 
