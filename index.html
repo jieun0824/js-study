@@ -83,17 +83,28 @@
         
         //공백 검사, 폼 전송 막기 
         $('form').on('submit', function(e){
-          if($('#first-value').val() == ''){
-            alert('로그인 아이디를 입력해주세요.');
+          let emailValue = $('#first-value').val();
+          let passwordValue = $('#second-value').val()
+
+          if(emailValue == ''){
+            alert('이메일을 입력해주세요.');
             e.preventDefault();} //폼 전송 막기
-          if($('#second-value').val() == ''){
+          //이메일 형식 검사 (정규식)
+          if(/\S+@\S+\.\S+/.test(emailValue)==false){
+            alert('이메일 형식 오류')
+            e.preventDefault();}
+
+          if(passwordValue == ''){
             alert('비밀번호를 입력해주세요.');
             e.preventDefault(); //폼 전송 막기
           }
-          if($('#second-value').val.length < 6){
-            alert('비밀번호를 6자 이상 입력해주세요.');
+          if(/[A-Z]/.test(passwordValue) == false){
+            alert('영어 대문자를 포함시켜주세요.');
             e.preventDefault();
           }
+          if(passwordValue.length < 6){
+            alert('비밀번호를 6자 이상 입력해주세요.');
+            e.preventDefault();}
           });
 
           //다크모드 버튼
@@ -140,6 +151,8 @@
               $('#present').hide();
             }
           }, 1000)
+
+          //정규식으로 이메일형식 검증
 
 
 
