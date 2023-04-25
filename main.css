@@ -68,3 +68,17 @@ show-modal 은 애니메이션 적용 후의 스타일 */
     background-color: black;
     color: white;
 }
+
+.slide-container{
+    width: 300vw;
+    transition: all 1s;
+}
+
+.slide-box{
+    width: 100vw;
+    float: left;
+}
+
+.slide-box img{
+    width: 100%;
+}

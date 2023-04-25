@@ -57,11 +57,30 @@
       </div>
 
       <!--setTimeout-->
-
+      
       <div class="alert alert-danger" id="present">
-        5초 이내 구매시 사은품 증정!
+      5초 이내 구매시 사은품 증정!
       </div>
 
+      <!--캐러셀 구현-->
+    <div style="overflow: hidden;">
+      <div class="slide-container">
+        <div class="slide-box">
+          <img src="car1.png">
+        </div>
+        <div class="slide-box">
+          <img src="car2.png">
+        </div>
+        <div class="slide-box">
+          <img src="car3.png">
+        </div>
+      </div>
+    </div> 
+
+    <button class="slide-1">1</button>
+    <button class="slide-2">2</button>
+    <button class="slide-3">3</button>
+    <button class="next-btn">다음</button>
 
 
     
@@ -152,7 +171,18 @@
             }
           }, 1000)
 
-          //정규식으로 이메일형식 검증
+          //캐러셀
+          $(".slide-2").on('click', function(){
+            $(".slide-container").css('transform', 'translateX(-100vw)');
+          });
+          $(".slide-3").on('click', function(){
+            $(".slide-container").css('transform', 'translateX(-200vw)');
+          });
+          $(".slide-1").on('click', function(){
+            $(".slide-container").css('transform', 'translateX(0vw)');
+          });
+
+          //다음 버튼 
 
 
 
