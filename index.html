@@ -80,7 +80,9 @@
     <button class="slide-1">1</button>
     <button class="slide-2">2</button>
     <button class="slide-3">3</button>
+    <button class="prev-btn">이전</button>
     <button class="next-btn">다음</button>
+    
 
 
     
@@ -183,6 +185,65 @@
           });
 
           //다음 버튼 
+          // let pageNum = 1;
+
+          // $('.next-btn').on('click', function(){
+          //   pageNum++;
+          //   console.log(pageNum)
+          //   if(pageNum%3 == 1){
+          //     $(".slide-container").css('transform', 'translateX(0vw)');
+          //   }else if(pageNum%3 == 2){
+          //     $(".slide-container").css('transform', 'translateX(-100vw)');
+          //   }else{
+          //     $(".slide-container").css('transform', 'translateX(-200vw)');
+          //   }
+          // })
+
+          // //이전 버튼
+          // $('.prev-btn').on('click', function(){
+          //   pageNum--;
+          //   console.log(pageNum)
+          //   if(pageNum%3 == 1){
+          //     $(".slide-container").css('transform', 'translateX(0vw)');
+          //   }else if(pageNum%3 == 2){
+          //     $(".slide-container").css('transform', 'translateX(-100vw)');
+          //   }else{
+          //     $(".slide-container").css('transform', 'translateX(-200vw)');
+          //   }
+          // })
+
+          //응용 버전
+          // $('.next-btn').on('click', function(){
+          //   if(pageNum == 1){
+          //     $('.slide-container').css('transform', 'translateX(-100vw)');
+          //     pageNum ++;
+          //   }else if(pageNum == 2){
+          //     $('.slide-container').css('transform', 'translate(-200vw)');
+          //     pageNum ++;
+          //   }else if(pageNum == 3){
+          //     $('.slide-container').css('transform', 'translate(0vw)');
+          //     pageNum =1;
+          //   }
+          // })
+
+          let slide = [0, -100, -200];
+          let page = 0;
+
+          $('.next-btn').on('click', function(){
+            page++;
+            $(".slide-container").css('transform', `translateX(${slide[page%3>=0?page%3:-2/(page%3)]}vw)`);
+          })
+          $('.prev-btn').on('click', function(){
+            page--;
+            $(".slide-container").css('transform', `translateX(${slide[page%3>=0?page%3:-2/(page%3)]}vw)`);
+          })
+
+
+
+
+
+
+          
 
 
 
