@@ -34,7 +34,7 @@
     <!--네브바-->
     <nav class="navbar navbar-light bg-light" id="navbar">
         <div class="container-fluid">
-          <span class="navbar-brand">Navbar</span>
+          <span class="navbar-brand">JSshop</span>
                 <!--다크모드 버튼-->
           <span class="badge bg-dark" id="mode-btn">Dark 🔄</span>
           <button class="navbar-toggler" type="button">
@@ -51,13 +51,13 @@
         <li class="list-group-item">And a fifth one</li>
       </ul> 
 
+      <!--메인, 로그인 창-->
       <div class="main-bg">
         <h4>Shirts in Sale</h4>
         <button id="login" class="btn btn-danger">로그인</button>
       </div>
 
       <!--setTimeout-->
-      
       <div class="alert alert-danger" id="present">
       5초 이내 구매시 사은품 증정!
       </div>
@@ -76,7 +76,6 @@
         </div>
       </div>
     </div> 
-
     <button class="slide-1">1</button>
     <button class="slide-2">2</button>
     <button class="slide-3">3</button>
@@ -84,6 +83,22 @@
     <button class="next-btn">다음</button>
     
 
+    <!--회원 약관 끝까지 읽으면 alert 띄우기-->
+    <div class="lorem">
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quae voluptas 
+      voluptatum minus praesentium fugit debitis at, laborum ipsa itaque placeat 
+      sit, excepturi eius. Nostrum perspiciatis, eligendi quae consectetur 
+      praesentium exercitationem. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quae voluptas 
+      voluptatum minus praesentium fugit debitis at, laborum ipsa itaque placeat 
+      sit, excepturi eius. Nostrum perspiciatis, eligendi quae consectetur 
+      praesentium exercitationem. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quae voluptas 
+      voluptatum minus praesentium fugit debitis at, laborum ipsa itaque placeat 
+      sit, excepturi eius. Nostrum perspiciatis, eligendi quae consectetur 
+      praesentium exercitationem.
+    </div> 
+
+    <!--스크롤 이벤트 연습-->
+    <div style="height:1000px"></div>
 
     
     <script>
@@ -184,47 +199,7 @@
             $(".slide-container").css('transform', 'translateX(0vw)');
           });
 
-          //다음 버튼 
-          // let pageNum = 1;
-
-          // $('.next-btn').on('click', function(){
-          //   pageNum++;
-          //   console.log(pageNum)
-          //   if(pageNum%3 == 1){
-          //     $(".slide-container").css('transform', 'translateX(0vw)');
-          //   }else if(pageNum%3 == 2){
-          //     $(".slide-container").css('transform', 'translateX(-100vw)');
-          //   }else{
-          //     $(".slide-container").css('transform', 'translateX(-200vw)');
-          //   }
-          // })
-
-          // //이전 버튼
-          // $('.prev-btn').on('click', function(){
-          //   pageNum--;
-          //   console.log(pageNum)
-          //   if(pageNum%3 == 1){
-          //     $(".slide-container").css('transform', 'translateX(0vw)');
-          //   }else if(pageNum%3 == 2){
-          //     $(".slide-container").css('transform', 'translateX(-100vw)');
-          //   }else{
-          //     $(".slide-container").css('transform', 'translateX(-200vw)');
-          //   }
-          // })
-
-          //응용 버전
-          // $('.next-btn').on('click', function(){
-          //   if(pageNum == 1){
-          //     $('.slide-container').css('transform', 'translateX(-100vw)');
-          //     pageNum ++;
-          //   }else if(pageNum == 2){
-          //     $('.slide-container').css('transform', 'translate(-200vw)');
-          //     pageNum ++;
-          //   }else if(pageNum == 3){
-          //     $('.slide-container').css('transform', 'translate(0vw)');
-          //     pageNum =1;
-          //   }
-          // })
+          //이전, 이후 버튼 
 
           let slide = [0, -100, -200];
           let page = 0;
@@ -238,8 +213,30 @@
             $(".slide-container").css('transform', `translateX(${slide[page%3>=0?page%3:-2/(page%3)]}vw)`);
           })
 
+          //스크롤 이벤트 추가 
+          //숙제 1. 스크롤바를 100px 내리면 로고 폰트사이즈를 작게 만들어라.
+
+          window.addEventListener('scroll', function(){
+            if (window.scrollY>=100){
+              $('.navbar-brand').addClass('after-scroll');
+            } else{
+              $('.navbar-brand').removeClass('after-scroll');
+            }
+          })
 
 
+
+          //숙제2. 회원약관 박스를 거의 끝까지 스크롤하면 alert를 띄워주자. 
+          document.querySelector('.lorem').addEventListener('scroll', function(){
+            let clientScroll = document.querySelector('.lorem').scrollTop + document.querySelector('.lorem').clientHeight;
+            console.log(clientScroll);
+            let realScroll = document.querySelector('.lorem').scrollHeight;
+            console.log(realScroll);
+            if(clientScroll>realScroll-10){
+              alert('스크롤 다함'); 
+            }           
+          })
+          
 
 
 

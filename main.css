@@ -1,3 +1,8 @@
+:root {
+    scroll-behavior: auto;
+}
+
+
 .alert-box{
     background-color: skyblue;
     padding: 20px;
@@ -24,8 +29,6 @@
     opacity: 0; /*투명도*/
     /* transition 추가 (시작 스타일에 추가)*/
     transition: all 1s; /*모든 css 속성이 변화할 때 1초에 걸쳐서 서서히 변하게 해주세요.*/
-
-
   }
 .white-bg {
     background: white;
@@ -81,4 +84,27 @@ show-modal 은 애니메이션 적용 후의 스타일 */
 
 .slide-box img{
     width: 100%;
+}
+
+/*스크롤 이벤트 연습*/
+
+.navbar{
+    position: fixed;
+    width: 100%;
+    z-index: 5;
+}
+
+.navbar-brand{
+    font-size: 30px; /*애니메이션 시작 전 스타일*/
+    transition: all 0.4s;
+}
+
+.after-scroll{
+    font-size: 20px;
+}
+
+.lorem{
+    width: 200px; 
+    height: 100px; 
+    overflow-y: scroll;
 }
