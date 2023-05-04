@@ -41,7 +41,10 @@
             <span class="navbar-toggler-icon"></span>
           </button>
         </div>
+                <!--진척 상황-->
+                <div class="page-amount"></div>
       </nav> 
+
 
       <ul class="list-group" id="list-group">
         <li class="list-group-item">An item</li>
@@ -50,6 +53,7 @@
         <li class="list-group-item">A fourth item</li>
         <li class="list-group-item">And a fifth one</li>
       </ul> 
+
 
       <!--메인, 로그인 창-->
       <div class="main-bg">
@@ -224,6 +228,16 @@
             }
           })
 
+          
+          //진척상황
+
+          window.addEventListener('scroll', function(){
+            let scrollAmount = window.scrollY;
+            let htmlAmount = document.querySelector('html').scrollHeight-document.querySelector('html').clientHeight;
+            document.querySelector('.page-amount').style.width = `${(scrollAmount/htmlAmount)*100}vw`;
+          })
+
+
 
 
           //숙제2. 회원약관 박스를 거의 끝까지 스크롤하면 alert를 띄워주자. 
@@ -236,6 +250,8 @@
               alert('스크롤 다함'); 
             }           
           })
+
+          
           
 
 

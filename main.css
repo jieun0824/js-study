@@ -52,6 +52,7 @@ show-modal 은 애니메이션 적용 후의 스타일 */
 .show-modal{
     visibility: visible;
     opacity: 1;
+    z-index: 6;
 }
 
 .main-bg {
@@ -107,4 +108,26 @@ show-modal 은 애니메이션 적용 후의 스타일 */
     width: 200px; 
     height: 100px; 
     overflow-y: scroll;
+}
+
+/*진척상황*/
+
+
+
+.page-amount{
+    background-color: rgb(70, 70, 70);
+    height: 0.2em;
+    width: 100vw;
+    z-index: 7;
+    position: absolute;
+    bottom: 0px;
+}
+
+.none{
+    background-color: black;
+    height: 0.3em;
+    width: 0vw;
+    z-index: 7;
+    position: absolute;
+    bottom: 0px;
 }
