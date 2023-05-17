@@ -50,3 +50,11 @@ $('.list').click(function(e){
     open_tab(e.target.dataset.id);
 
 })
+
+
+
+//상세페이지, array, object
+
+var car2 = {name:'소나타', price: [50000, 3000, 4000]}
+// document.querySelector('.car-title').innerHTML = car2.name;
+document.querySelector('.car-price').innerHTML = car2['price'][0];
