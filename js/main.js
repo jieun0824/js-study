@@ -141,3 +141,15 @@ $('form').on('submit', function(e){
       alert('스크롤 다함'); 
     }           
   })
+
+  //검정 배경 클릭하면 모달 창 닫히도록
+  document.querySelector('.black-bg').addEventListener('click', function(e){
+    //내가 실제로 누른게 까만배경이면 모달창 닫아주세요~
+    // console.log(e.target)
+    // console.log(document.querySelector('.black-bg'))
+    if(e.target == document.querySelector('.black-bg')){
+      $('.black-bg').removeClass('show-modal');
+    }
+
+    console.log($('.black-bg'));
+  })
