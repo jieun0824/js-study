@@ -58,3 +58,35 @@ $('.list').click(function(e){
 var car2 = {name:'소나타', price: [50000, 3000, 4000]}
 // document.querySelector('.car-title').innerHTML = car2.name;
 document.querySelector('.car-price').innerHTML = car2['price'][0];
+
+// //select 인풋
+// const select = document.getElementById('option1');
+
+// select.addEventListener('change', function(){
+//     if(select.options[select.selectedIndex].value == 'shirts'){
+//         document.querySelector('#option2').classList.remove('form-hide');
+
+//     }else{
+//         document.querySelector('#option2').classList.add('form-hide');
+//     }
+// })
+
+
+
+$('.form-select').eq(0).on('input', function(){
+    var value = this.value;
+    if(value == '셔츠'){
+        let shirtsSize = `<option>90</option>
+        <option>95</option>`
+        $('.form-select').eq(1).html(shirtsSize);
+        $('.form-select').eq(1).removeClass('form-hide');
+    }else if(value== '모자'){
+        $('.form-select').eq(1).addClass('form-hide');
+    }else if(value == '바지'){
+        let pantsSize = `<option>28</option>
+        <option>30</option>`;
+        $('.form-select').eq(1).html(pantsSize);
+        $('.form-select').eq(1).removeClass('form-hide');
+    }
+})
+
