@@ -71,22 +71,31 @@ document.querySelector('.car-price').innerHTML = car2['price'][0];
 //     }
 // })
 
+//서버에서 사이즈 데이터 가져온다고 가정 
+
+var pants = [28,30,32]; //서버에서 가져온 데이터라 가정
+var shirts = [95, 100, 105];
+
+//pants 데이터갯수만큼 <option></option> 생성해주세요.
+
 
 
 $('.form-select').eq(0).on('input', function(){
     var value = this.value;
     if(value == '셔츠'){
-        let shirtsSize = `<option>90</option>
-        <option>95</option>`
-        $('.form-select').eq(1).html(shirtsSize);
         $('.form-select').eq(1).removeClass('form-hide');
+        $('.form-select').eq(1).html('');
+        shirts.forEach(function(a){
+            $('.form-select').eq(1).append(`<option>${a}</option>`);
+        })
     }else if(value== '모자'){
         $('.form-select').eq(1).addClass('form-hide');
     }else if(value == '바지'){
-        let pantsSize = `<option>28</option>
-        <option>30</option>`;
-        $('.form-select').eq(1).html(pantsSize);
         $('.form-select').eq(1).removeClass('form-hide');
+        $('.form-select').eq(1).html('');
+        pants.forEach((a) => {
+            $('.form-select').eq(1).append(`<option>${a}</option>`);
+        });
     }
 })
 

@@ -124,6 +124,62 @@
         //Q2
 
 
+        //array, for 반복문 실력향상 과제
+
+        //Q1. Array에서 철수라는 자료를 찾고 싶습니다. 
+
+        var names = ['흥민', '영희', '철수', '재석', '철수'];
+
+        //function searchingName(input){
+        //    names.forEach(function(a, i){
+        //        if(input == a){
+        //            console.log('있어요');
+                      //return; //하면 안된다.  
+        //        }
+        //    })
+
+        //}
+
+        function 이름찾기(name){
+            for (var i = 0; i < 4; i++) {
+              if ( name == names[i]) {
+                console.log('있어요')
+                return;
+              }
+            }
+          }
+
+        //Q2 갑자기 구구단을 콘솔창에 출력하고 싶습니다. 
+        let dan = [2,3,4,5,6,7,8,9]
+
+        dan.forEach(function(a, i){
+            //console.log(a+'단');
+            for (let i = 1; i<10; i++){
+                //console.log(a*i)
+            }
+        })
+
+        //Q3 평균점수 계산기 만들기
+        
+        function 점수비교(array, score){
+            let total = 0;
+            array.forEach(function(a){
+                total+=a;
+            })
+
+            let mean = total/array.length;
+            if(mean>score){
+                console.log(`평균보다 ${mean-score}점이 떨어졌네요 재수추천`);
+            }else if(mean<score){
+                console.log(`평균보다 ${score-mean}점이 올랐네요`);
+
+            }else{
+                console.log(`성적이 평균입니다.`);
+            }
+
+        }
+
+
 
 
 
