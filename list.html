@@ -61,11 +61,12 @@
         })
 
         function cardMaker(array){
-          array.forEach(function(a){
+          array.forEach(function(a,i){
             let template = `<div class="col-sm-4">
               <img src="https://via.placeholder.com/600" class="w-100">
               <h5>${a.title}</h5>
               <p>가격 : ${a.price}</p>
+              <button class="buy">구매</button>
             </div> `
             $('.row').append(template);
           })
@@ -113,6 +114,25 @@
 
 
         })
+
+        //구매버튼 누르면 누른상품명 localStorage에 저장하기 (array로)
+
+        $('.buy').on('click', (e)=>{
+          let array1 = []
+          let name = $(e.target).siblings('h5').text();
+          console.log(name)
+          if(localStorage.getItem('이름') == null){ //이미 이름이라는 항목이 있으면 
+            localStorage.setItem('이름', JSON.stringify([name]))
+          }else{
+            let value = JSON.parse(localStorage.getItem('이름'))
+            value.push(name)
+            let newArr = JSON.stringify(value)
+            localStorage.setItem('이름', newArr)
+          }
+          
+
+        })
+
 
 
         
