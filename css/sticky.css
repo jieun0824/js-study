@@ -1,0 +1,18 @@
+.grey{
+    background: lightgrey;
+    height: 2000px;
+    margin-top: 500px;
+}
+
+.image{
+    float: right;
+    width: 400px;
+    position: sticky;
+    /* 조건부로(그림 등장할 때부터, 부모 박스를 넘어서면 fixed 해제) position이 fixed  */
+    top: 100px; /* 상단 어디에 고정이 될 것인지 */
+}
+
+.text{
+    float: left;
+    width: 300px;
+}
